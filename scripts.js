@@ -53,7 +53,7 @@ let game = () =>{
 
     for(let i = 0; i < 5; i++){
         let userSelection = prompt("Rock, Paper or Scissors? ")
-        userSelection.toLowerCase();
+        userSelection = userSelection.toLowerCase();
         let computerSelection = computerPlay();
         let result = gamePlay(userSelection, computerSelection)
         if(result === "Draw"){
@@ -71,8 +71,10 @@ let game = () =>{
     if(totalWinsUser > totalWinsComputer){
         console.log("YOU WON IT ALL!");
     }else if(totalWinsUser < totalWinsComputer){
-        console.log("YOU LOST IT ALL");
+        console.log("YOU LOST IT ALL!");
     }else{
         console.log("IT'S A DRAW");
     }
 }
+
+game();
