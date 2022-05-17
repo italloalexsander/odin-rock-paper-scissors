@@ -17,6 +17,7 @@ let computerPlay = () => {
 
 //Function that plays a Round of Rock, Paper and Scissors
 let gamePlay = (userSelection, computerSelection) =>{
+
     if(userSelection === computerSelection){
         return "Draw"
     }
@@ -44,3 +45,33 @@ let gamePlay = (userSelection, computerSelection) =>{
     }
 }
 
+let game = () =>{
+
+    totalWinsUser = 0;
+    totalWinsComputer = 0;
+
+    for(let i = 0; i < 5; i++){
+        let userSelection = prompt("Rock, Paper or Scissors? ")
+        userSelection.toLowerCase();
+        let computerSelection = computerPlay();
+        let result = gamePlay(userSelection, computerSelection)
+        if(result === "Draw"){
+            console.log("Draw! Both you and the computer have chosen " + userSelection);
+        }else if(result === "ComputerWins"){
+            console.log("You Lost! The computer " + computerSelection + " beats your " + userSelection);
+            totalWinsComputer++;
+        }
+        else if(result === "UserWins"){
+            console.log("You WON! Your " + userSelection + " beats the computer " + computerSelection)
+            totalWinsUser++;
+        }
+    }
+
+    if(totalWinsUser > totalWinsComputer){
+        console.log("YOU WON IT ALL!");
+    }else if(totalWinsUser < totalWinsComputer){
+        console.log("YOU LOST IT ALL");
+    }else{
+        console.log("IT'S A DRAW");
+    }
+}
