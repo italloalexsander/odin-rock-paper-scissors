@@ -45,6 +45,7 @@ let gamePlay = (userSelection, computerSelection) =>{
     }
 }
 
+//This function will play a 5 round game of RPS
 let game = () =>{
 
     totalWinsUser = 0;
