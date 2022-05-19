@@ -69,25 +69,32 @@ const resetScoreHandler = () => {
 }
 
 
+const outerWrapper = document.getElementById('outer-wrapper');
+const winnerMessage = document.createElement('div');
+
+
 const winnerHandler = (winner) =>{
- if(winner === "User-Wins"){
-     alert("Congratulations, you won!");
-     resetScoreHandler();
-     
- }
- if(winner === "Computer-Wins"){
-     alert("The computer won!");
-     resetScoreHandler();
- }
+    if(winner === "User-Wins"){
+        console.log(score[0]);
+        winnerMessage.textContent = "YOU WON " + `${score[0]}` + " to " + `${score[1]}`
+        outerWrapper.appendChild(winnerMessage)
+        resetScoreHandler();
+    }
+    if(winner === "Computer-Wins"){
+        winnerMessage.textContent = "YOU LOST " + `${score[1]}` + " to " + `${score[0]}`
+        outerWrapper.appendChild(winnerMessage)
+        resetScoreHandler();
+    }
 }
+
 
 const updateScoreHandler = result =>{
     if(result === "UserWins"){
-        ++score[0];
+        score[0]++;
         userScoreText.textContent = `${score[0]}`;
     }
     else if(result === "ComputerWins"){
-        ++score[1];
+        score[1]++;
         computerScoreText.textContent = `${score[1]}`;
     }
     else{
@@ -96,11 +103,9 @@ const updateScoreHandler = result =>{
     }
 
     if(score[0] === 5){
-        userScoreText.textContent = `${score[0]}`;
         winnerHandler("User-Wins");
     }
     else if(score[1] === 5){
-        computerScoreText.textContent = `${score[1]}`;
         winnerHandler("Computer-Wins");
     }
 
