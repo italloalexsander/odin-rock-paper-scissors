@@ -79,12 +79,54 @@ const gamePlay = (userSelection) =>{
     }
 }*/
 
+const score = [];
+score[0] = 0; //User score
+score[1] = 0; //Computer Score
+score[2] = 0; //Draw;
+
+const userScoreText = document.getElementById('userScore')
+const computerScoreText = document.getElementById('computerScore')
+const drawsText = document.getElementById('draws')
+
+const updateScoreHandler = result =>{
+    if(result === "UserWins"){
+        score[0]++;
+        userScoreText.textContent = `${score[0]}`;
+    }
+    else if(result === "ComputerWins"){
+        score[1]++;
+        computerScoreText.textContent = `${score[1]}`;
+    }
+    else{
+        score[2]++;
+        drawsText.textContent = `${score[2]}`;
+    }
+
+    if(score[0] === 5){
+        console.log("User-Wins")
+    }
+    else if(score[1] === 5){
+        console.log("Computer-Wins")
+    }
+
+    return "Keep-Going";
+}
+
+
+const userSelectionHandler = selection => {
+    let result = gamePlay(selection);
+    updateScoreHandler(result);
+}
+
 const btn = document.querySelectorAll('button');
 
+//Adding a event listener to every button and passing the
+//selection to the gameplay function;
 btn.forEach((e) => {
     e.addEventListener('click', ()=>{
-        gamePlay(e.id)
+        userSelectionHandler(e.id);
     })
 })
+
 
 
