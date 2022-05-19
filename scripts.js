@@ -77,6 +77,11 @@ let gamePlay = (userSelection, computerSelection) =>{
     }
 }*/
 
+const btn = document.querySelectorAll('button');
 
+btn.forEach((e) => {
+    e.addEventListener('click', ()=>{
+        alert(e.id);
+    })
+})
 
-game();
