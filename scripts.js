@@ -70,8 +70,7 @@ const resetScoreHandler = () => {
 
 
 const outerWrapper = document.getElementById('outer-wrapper');
-const winnerMessage = document.createElement('div');
-const roundWinner = document.createElement('div');
+const winnerMessage = document.getElementById('current-message');
 
 
 const winnerHandler = (winner) =>{
@@ -82,7 +81,7 @@ const winnerHandler = (winner) =>{
         resetScoreHandler();
     }
     if(winner === "Computer-Wins"){
-        winnerMessage.textContent = "YOU LOST THE MATCH " + `${score[1]}` + " to " + `${score[0]}`
+        winnerMessage.textContent = "YOU LOST THE MATCH " + `${score[0]}` + " to " + `${score[1]}`
         outerWrapper.appendChild(winnerMessage)
         resetScoreHandler();
     }
@@ -94,20 +93,20 @@ const updateScoreHandler = (userSelection, computerSelection, result) =>{
     if(result === "UserWins"){
         score[0]++;
         userScoreText.textContent = `${score[0]}`;
-        roundWinner.textContent = `${userSelection}` + " beats " + `${computerSelection}` + " , YOU WON THIS ROUND!"
-        outerWrapper.appendChild(roundWinner);
+        winnerMessage.textContent = `${userSelection}` + " beats " + `${computerSelection}` + " , YOU WON THIS ROUND!"
+        outerWrapper.appendChild(winnerMessage);
     }
     else if(result === "ComputerWins"){
         score[1]++;
         computerScoreText.textContent = `${score[1]}`;
-        roundWinner.textContent = `${computerSelection}` + " beats " + `${userSelection}` + " , YOU LOST THIS ROUND!"
-        outerWrapper.appendChild(roundWinner);
+        winnerMessage.textContent = `${computerSelection}` + " beats " + `${userSelection}` + " , YOU LOST THIS ROUND!"
+        outerWrapper.appendChild(winnerMessage);
     }
     else{
         score[2]++;
         drawsText.textContent = `${score[2]}`;
-        roundWinner.textContent = "Both you and the computer have chosen " + `${userSelection}` + " , IT'S A DRAW!"
-        outerWrapper.appendChild(roundWinner);
+        winnerMessage.textContent = "Both you and the computer have chosen " + `${userSelection}` + " , IT'S A DRAW!"
+        outerWrapper.appendChild(winnerMessage);
     }
 
     if(score[0] === 5){
