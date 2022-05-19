@@ -4,12 +4,15 @@
         <meta charset="utf-8">
         <script src="scripts.js" defer></script>
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="outer-wrapper">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <div class="selection">
+                <button id="rock">&#9994;</button>
+                <button id="paper">	&#128400;</button>
+                <button id="scissors">&#9996;</button>
+            </div>
             <div id="score-wrapper">
                 <p>Player: <span id="userScore"></span></p>
                 <p>Computer: <span id="computerScore"></span></p>

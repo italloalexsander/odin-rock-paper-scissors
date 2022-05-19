@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    background-color: aquamarine;
+}
+
+#outer-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 15px;
+}
+
+.selection{
+    display: flex;
+    gap: 15px;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    font-size: 50px;
+    background-color: blueviolet;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: white;
+}
