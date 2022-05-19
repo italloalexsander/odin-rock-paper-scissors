@@ -46,7 +46,7 @@ let gamePlay = (userSelection, computerSelection) =>{
 }
 
 //This function will play a 5 round game of RPS
-let game = () =>{
+/*let game = () =>{
 
     totalWinsUser = 0;
     totalWinsComputer = 0;
@@ -75,6 +75,8 @@ let game = () =>{
     }else{
         console.log("IT'S A DRAW");
     }
-}
+}*/
+
+
 
 game();
