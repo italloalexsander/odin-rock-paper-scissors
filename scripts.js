@@ -1,5 +1,5 @@
 //Function that returns either Rock, Paper or Scissors
-let computerPlay = () => {
+const computerPlay = () => {
 
     //A number between 1 and 3 must be returned
     let computerChoice = Math.floor(Math.random() * (3 - 1 + 1) + 1)
@@ -16,7 +16,9 @@ let computerPlay = () => {
 }
 
 //Function that plays a Round of Rock, Paper and Scissors
-let gamePlay = (userSelection, computerSelection) =>{
+const gamePlay = (userSelection) =>{
+
+    computerSelection = computerPlay();
 
     if(userSelection === computerSelection){
         return "Draw"
@@ -81,7 +83,8 @@ const btn = document.querySelectorAll('button');
 
 btn.forEach((e) => {
     e.addEventListener('click', ()=>{
-        alert(e.id);
+        gamePlay(e.id)
     })
 })
+
 
