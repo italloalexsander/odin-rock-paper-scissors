@@ -5,6 +5,7 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     min-height: 100vh;
@@ -57,4 +58,21 @@ img:hover{
     display: flex;
     gap: 20px;
 
+}
+
+.footer{
+    align-self: center;
+    padding: 25px;
+    color: white;
+}
+
+.footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer a:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    color: greenyellow;
 }
