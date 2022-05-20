@@ -5,13 +5,13 @@ const computerPlay = () => {
     let computerChoice = Math.floor(Math.random() * (3 - 1 + 1) + 1)
 
     if(computerChoice === 1){
-        return "rock";
+        return "Rock";
     }
     else if(computerChoice === 2){
-        return "paper";
+        return "Paper";
     }
     else{
-        return "scissors";
+        return "Scissors";
     }
 }
 
@@ -23,22 +23,22 @@ const gamePlay = (userSelection) =>{
     if(userSelection === computerSelection){
         return [userSelection, computerSelection, "Draw"]
     }
-    else if(userSelection === "rock"){
-        if(computerSelection === "paper"){
+    else if(userSelection === "Rock"){
+        if(computerSelection === "Paper"){
             return [userSelection, computerSelection, "ComputerWins"]
         }
         else{
             return [userSelection, computerSelection, "UserWins"]
         }
-    }else if(userSelection === "paper"){
-        if(computerSelection === "scissors"){
+    }else if(userSelection === "Paper"){
+        if(computerSelection === "Scissors"){
             return [userSelection, computerSelection, "ComputerWins"]
         }
         else{
             return [userSelection, computerSelection, "UserWins"]
         }
-    }else if(userSelection === "scissors"){
-        if(computerSelection === "rock"){
+    }else if(userSelection === "Scissors"){
+        if(computerSelection === "Rock"){
             return [userSelection, computerSelection, "ComputerWins"]
         }
         else{
@@ -126,11 +126,11 @@ const userSelectionHandler = selection => {
     updateScoreHandler(result[0], result[1], result[2]);
 }
 
-const btn = document.querySelectorAll('button');
+const img = document.querySelectorAll('img');
 
 //Adding a event listener to every button and passing the
 //selection to the gameplay function;
-btn.forEach((e) => {
+img.forEach((e) => {
     e.addEventListener('click', ()=>{
         userSelectionHandler(e.id);
     })

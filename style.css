@@ -24,20 +24,20 @@ body{
 
 .selection{
     display: flex;
-    gap: 15px;
+    gap: 35px;
 }
 
-button{
+img{
     height: 100px;
     width: 100px;
-    border-radius: 50%;
     font-size: 50px;
     background-color: blueviolet;
     border: 2px solid white;
+    border-radius: 100%;
 
 }
 
-button:hover{
+img:hover{
     cursor: pointer;
     transform: scale(1.1);
     border: 2px solid gold;
